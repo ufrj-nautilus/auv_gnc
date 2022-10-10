@@ -49,15 +49,15 @@ target_link_libraries(${PROJECT_NAME}
   ${CERES_LIBRARIES}
 )
 
-add_executable(test_node src/test_node.cpp)
-target_link_libraries(test_node ${catkin_LIBRARIES} ${CERES_LIBRARIES})
-add_dependencies(test_node ${catkin_EXPORTED_TARGETS})
+add_executable(pose_edkf src/test_node.cpp)
+target_link_libraries(pose_edkf ${catkin_LIBRARIES} ${CERES_LIBRARIES})
+add_dependencies(pose_edkf ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##
 #############
 
-install(TARGETS test_node
+install(TARGETS pose_edkf
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
