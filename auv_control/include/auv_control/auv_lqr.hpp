@@ -10,20 +10,20 @@
 #include <algorithm>
 
 // Add new typedefs to Eigen namespace so we can use CppAD with it
-namespace Eigen 
-{
-template<typename X, typename BinOp>
-struct ScalarBinaryOpTraits<CppAD::AD<X>,X,BinOp>
-{
-  typedef CppAD::AD<X> ReturnType;
-};
+// namespace Eigen 
+// {
+// template<typename X, typename BinOp>
+// struct ScalarBinaryOpTraits<CppAD::AD<X>,X,BinOp>
+// {
+//   typedef CppAD::AD<X> ReturnType;
+// };
 
-template<typename X, typename BinOp>
-struct ScalarBinaryOpTraits<X,CppAD::AD<X>,BinOp>
-{
-  typedef CppAD::AD<X> ReturnType;
-};
-} // namespace Eigen
+// template<typename X, typename BinOp>
+// struct ScalarBinaryOpTraits<X,CppAD::AD<X>,BinOp>
+// {
+//   typedef CppAD::AD<X> ReturnType;
+// };
+// } // namespace Eigen
 
 namespace auv_control
 {
