@@ -1,4 +1,3 @@
-#include "ros/ros.h"
 #include "auv_control/auv_lqr.hpp"
 
 namespace auv_control
