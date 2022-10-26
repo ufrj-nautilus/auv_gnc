@@ -1,5 +1,5 @@
-#include "auv_gnc/trans_ekf.hpp"
 #include <ros/ros.h>
+#include "auv_gnc/trans_ekf.hpp"
 
 int main(int argc, char** argv) {
   ros::init(argc, argv, "trans_ekf");

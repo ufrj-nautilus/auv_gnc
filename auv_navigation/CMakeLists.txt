@@ -31,9 +31,9 @@ include_directories(
   ${EIGEN3_INCLUDE_DIRS} 
 )
 
-add_executable(test_node src/test_node.cpp)
-target_link_libraries(test_node ${catkin_LIBRARIES})
-add_dependencies(test_node ${catkin_EXPORTED_TARGETS})
+# add_executable(test_node src/test_node.cpp)
+# target_link_libraries(test_node ${catkin_LIBRARIES})
+# add_dependencies(test_node ${catkin_EXPORTED_TARGETS})
 
 add_library(${PROJECT_NAME} SHARED
   src/kalman_filter.cpp
@@ -50,9 +50,9 @@ target_link_libraries(${PROJECT_NAME}
 ## Install ##
 #############
 
-install(TARGETS test_node
-        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# install(TARGETS test_node
+#         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 install(DIRECTORY launch
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}

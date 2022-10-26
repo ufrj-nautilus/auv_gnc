@@ -1,3 +1,4 @@
+#include <ros/ros.h>
 #include "auv_gnc/guidance_controller.hpp"
 
 namespace auv_gnc

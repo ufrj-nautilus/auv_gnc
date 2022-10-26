@@ -1,5 +1,5 @@
-#include "auv_gnc/guidance_controller.hpp"
 #include <ros/ros.h>
+#include "auv_gnc/guidance_controller.hpp"
 
 int main(int argc, char **argv)
 {

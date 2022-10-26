@@ -1,3 +1,4 @@
+#include <ros/ros.h>
 #include "auv_gnc/trans_ekf.hpp"
 
 namespace auv_gnc
