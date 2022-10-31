@@ -56,6 +56,9 @@ AUV GNC has two other dependencies listed below, but these libraries are include
 * [Control Toolbox](https://github.com/ethz-adrl/control-toolbox) (C++ optimized control library developed by researchers at ETH Zurich's Agile & Dexterous Robotics Lab)
 * [Kindr](https://github.com/ANYbotics/kindr) (C++ robotics library, only included because the Control Toolbox depends on it)
 
+### Installing the dependencies
+apt update && apt -y install cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev libeigen3-dev libceres-dev cppad libboost-all-dev build-essential python3-catkin-tools
+
 ### Building
 To get started, clone this library into a catkin workspace.
 
