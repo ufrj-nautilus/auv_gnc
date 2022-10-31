@@ -28,10 +28,8 @@ private:
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
-  TestNode() = default;
-  void copy(const Eigen::Ref<const Eigen::MatrixXd> &m) {
-    mat = m;
-  }
+  TestNode();
+  void copy(const Eigen::Ref<const Eigen::MatrixXd> &m);
   Eigen::Vector4d multiplyQuaternions(Eigen::Vector4d q1, Eigen::Vector4d q2);
   Eigen::Matrix4d quaternionMatrix(Eigen::Vector4d q);
 };

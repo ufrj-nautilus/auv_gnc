@@ -14,7 +14,6 @@ TestNode::TestNode() : nh("~")
 {
 
     // Ceres stuff min jerk time solver /////////////////////
-
     ceres::Problem problemMinJerkTime_;
     ceres::Solver::Options optionsMinJerkTime_;
     ceres::Solver::Summary summaryMinJerkTime_;
@@ -48,5 +47,4 @@ TestNode::TestNode() : nh("~")
     ceres::Solve(optionsMinJerkTime_, &problemMinJerkTime_, &summaryMinJerkTime_);
     cout << "Min Jerk time: " << minTime_ << endl;
 }
-
 } // namespace auv_guidance

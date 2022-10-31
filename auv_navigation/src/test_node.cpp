@@ -1,29 +1,29 @@
 #include "auv_navigation/test_node.hpp"
 
-// namespace Eigen
-// {
-// template <typename X, typename BinOp>
-// struct ScalarBinaryOpTraits<CppAD::AD<X>, X, BinOp>
-// {
-//     typedef CppAD::AD<X> ReturnType;
-// };
+namespace Eigen
+{
+template <typename X, typename BinOp>
+struct ScalarBinaryOpTraits<CppAD::AD<X>, X, BinOp>
+{
+    typedef CppAD::AD<X> ReturnType;
+};
 
-// template <typename X, typename BinOp>
-// struct ScalarBinaryOpTraits<X, CppAD::AD<X>, BinOp>
-// {
-//     typedef CppAD::AD<X> ReturnType;
-// };
-// } // namespace Eigen
+template <typename X, typename BinOp>
+struct ScalarBinaryOpTraits<X, CppAD::AD<X>, BinOp>
+{
+    typedef CppAD::AD<X> ReturnType;
+};
+} // namespace Eigen
 
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "pose_edkf");
-    // auv_navigation::TestNode testNode;
+    auv_navigation::TestNode testNode;
     ros::spin();
 }
 
-// namespace auv_navigation
-// {
+namespace auv_navigation
+{
 void GetRotationYPR2Body(Eigen::Ref<Eigen::MatrixXf> R, float yaw, float pitch, float roll)
 {
     //Matrix3f R = Matrix3f::Zero();
@@ -45,8 +45,8 @@ void GetRotationYPR2Body(Eigen::Ref<Eigen::MatrixXf> R, float yaw, float pitch, 
     R(2, 2) = c_phi * c_theta;
 }
 
-// TestNode::TestNode() : nh("~")
-// {
+TestNode::TestNode() : nh("~")
+{
     /*int n = 2;
     int m = 3;
     vector<MatrixXi> mat;
@@ -285,21 +285,20 @@ void GetRotationYPR2Body(Eigen::Ref<Eigen::MatrixXf> R, float yaw, float pitch, 
     gmVec3.z = 420;
     tf::vectorMsgToEigen(gmVec3, tfVec);
     cout << "tf conversion: " << endl << tfVec << endl;*/
-// }
-
-// TestNode::TestNode() : nh("~")
-// void auv_navigation::TestNode::copy(m);
-// {
-//     mat = m;
-// }
-
-// Multiplies quaternions wrt the WORLD frame
-Eigen::Vector4d auv_navigation::TestNode::multiplyQuaternions(Eigen::Vector4d q1, Eigen::Vector4d q2)
-{
-    return (auv_navigation::TestNode::quaternionMatrix(q1) * q2);
 }
 
-Eigen::Matrix4d auv_navigation::TestNode::quaternionMatrix(Eigen::Vector4d q)
+void TestNode::copy(const Eigen::Ref<const Eigen::MatrixXd> &m)
+{
+    mat = m;
+}
+
+// Multiplies quaternions wrt the WORLD frame
+Eigen::Vector4d TestNode::multiplyQuaternions(Eigen::Vector4d q1, Eigen::Vector4d q2)
+{
+    return (TestNode::quaternionMatrix(q1) * q2);
+}
+
+Eigen::Matrix4d TestNode::quaternionMatrix(Eigen::Vector4d q)
 {
     Eigen::Matrix4d Q, diag;
     Q.setZero(), diag.setIdentity();
@@ -309,4 +308,4 @@ Eigen::Matrix4d auv_navigation::TestNode::quaternionMatrix(Eigen::Vector4d q)
     Q.block<3, 1>(1, 0) = q.tail<3>();
     return (Q + diag);
 }
-// } // namespace auv_navigation
+} // namespace auv_navigation
