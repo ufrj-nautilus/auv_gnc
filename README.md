@@ -65,7 +65,7 @@ apt update && apt -y install cmake libgoogle-glog-dev libatlas-base-dev libsuite
 To get started, clone this library into a catkin workspace.
 
     cd ~/catkin_ws/src
-    git clone --recursive https://github.com/tsender/auv_gnc.git
+    git clone --recursive https://github.com/ufrj-nautilus/auv_gnc.git
 
 For FIRST TIME users, please run the following to install the required dependencies:
 
