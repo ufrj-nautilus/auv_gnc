@@ -33,54 +33,54 @@ model:
     #     2A. For attitude, first orient the thruster such that a positive force exerted BY the thruster (ON the vehicle) points in the vehicle's positive X-direction.
     #     2B. Then perform yaw, followed by pitch, to arrive at the thruster's actual orientation with respect to the vehicle's body-frame.
     # Disble thrusters with care. User is responsible for ensuring the system is fully controllable.
-    {
+     {
       id: 0,
       name: "HPF",
       enable: true,
-      pose: [0.37273, -0.18946, 0.01509, 0.0, 90.0]
+      pose: [0.2199,  -0.11002, 0.31876, 0.0, 135.0]
     },
+     {
+       id: 1,
+       name: "HPA",
+       enable: true,
+       pose: [0.2199, 0.11002, 0.31876, 0.0, 45.0]
+     },
+     {
+       id: 2,
+       name: "HSF",
+       enable: true,
+       pose: [-0.2199, -0.11002, 0.31876, 0.0, -135.0]
+     },
+     {
+       id: 3,
+       name: "HSA",
+       enable: true,
+       pose: [-0.2199, 0.11002, 0.31876, 0.0,  -45.0]
+     },
     {
-      id: 1,
-      name: "HPA",
-      enable: true,
-      pose: [-0.37273, -0.18946, 0.01509, 0.0, 90.0]
-    },
-    {
-      id: 2,
-      name: "HSF",
-      enable: true,
-      pose: [0.37273, 0.18946, 0.01509, 0.0, 90.0]
-    },
-    {
-      id: 3,
-      name: "HSA",
-      enable: true,
-      pose: [-0.37273, 0.18946, 0.01509, 0.0, 90.0]
-    },
-    {
-      id: 4,
-      name: "VPF",
-      enable: true,
-      pose: [0.398, -0.29921, -0.10615, -135.0, 0.0]
-    },
-    {
-      id: 5,
-      name: "VPA",
-      enable: true,
-      pose: [-0.398, -0.29921, -0.10615, -45.0, 0.0]
-    },
-    {
-      id: 6,
-      name: "VSF",
-      enable: true,
-      pose: [0.398, 0.29921, -0.10615, 135.0, 0.0]
-    },
-    {
-      id: 7,
-      name: "VSA",
-      enable: true,
-      pose: [-0.398, 0.29921, -0.10615, 45.0, 0.0]
-    }
+       id: 4,
+       name: "VPF",
+       enable: true,
+       pose: [0.2199, -0.11002, 0.12176, 90, 0.0]
+     },
+     {
+       id: 5,
+       name: "VPA",
+       enable: true,
+       pose: [0.2199, 0.11002, 0.12176, 90.0, 0.0]
+     },
+     {
+       id: 6,
+       name: "VSF",
+       enable: true,
+       pose: [-0.2199, -0.11002, 0.12176, 90.0, 0.0]
+     },
+     {
+       id: 7,
+       name: "VSA",
+       enable: true,
+       pose: [-0.2199, 0.11002, 0.12176, 90.0, 0.0]
+     }
   ]
 }
 constraints: # Note: Some constraints are for trajectory limits
